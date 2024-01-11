@@ -1,79 +1,43 @@
-[![Build Status](https://github.com/firebase/firebase-admin-java/workflows/Continuous%20Integration/badge.svg)](https://github.com/firebase/firebase-admin-java/actions)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.firebase/firebase-admin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.firebase/firebase-admin)
-[![Javadoc](https://javadoc-badge.appspot.com/com.google.firebase/firebase-admin.svg)](https://firebase.google.com/docs/reference/admin/java/reference/packages)
+The Mailgun SDK allows your Mac OS X or iOS application to connect with the [Mailgun](http://www.mailgun.com) programmable email platform. Send and manage mailing list subscriptions from your desktop or mobile applications and connect with your users directly in your application.
+ 
+**Requirements** The AFNetworking library is required for the `Mailgun` client library.
+ 
+Easy Image Attaching
+====================
+ 
+Using MGMessage will allow you to attach `UIImage` or `NSImage` instances to a message. It will handle converting the image for you and attaching it either inline or to the message header.
 
-# Firebase Admin Java SDK
+API Support
+===========
 
-## Table of Contents
+At this time the full Mailgun REST API is not supported. Currently support is only provided to send messages, subscribe/unsubscribe from mailing lists and to check mailing lists subscriptions.
 
- * [Overview](#overview)
- * [Installing](#installing)
- * [Contributing](#contributing)
- * [Supported Java Versions](#supported-java-versions)
- * [Documentation](#documentation)
- * [License and Terms](#license-and-terms)
+*Note* These features may be implemented at a later date.
+ 
+Sending Example
+===============
 
+     Mailgun *mailgun = [Mailgun clientWithDomain:@"samples.mailgun.org" apiKey:@"key-3ax6xnjp29jd6fds4gc373sgvjxteol0"];
+     [mailgun sendMessageTo:@"Jay Baird <jay.baird@rackspace.com>" 
+                       from:@"Excited User <someone@sample.org>" 
+                    subject:@"Mailgun is awesome!" 
+                       body:@"A unicode snowman for you! ☃"];
+ 
+Installation
+============
 
-## Overview
+1. Install via Cocoapods
 
-[Firebase](https://firebase.google.com) provides the tools and infrastructure
-you need to develop apps, grow your user base, and earn money. The Firebase
-Admin Java SDK enables access to Firebase services from privileged environments
-(such as servers or cloud) in Java. Currently this SDK provides
-Firebase custom authentication support, and Firebase realtime database access.
+        pod install mailgun
 
-For more information, visit the
-[Firebase Admin SDK setup guide](https://firebase.google.com/docs/admin/setup/).
+    or add
 
+        pod 'mailgun', '~> 1.0.3'
 
-## Installing
+    to your Podfile.
 
-Firebase Admin Java SDK is distributed via the
-[Maven central repository](https://repo1.maven.org/maven2/com/google/firebase/firebase-admin/).
-Simply configure your build tool to pull the latest version of the SDK into
-your projects.
+2. Install via Source
 
- * Group ID: `com.google.firebase`
- * Artifact ID: `firebase-admin`
-
-
-## Contributing
-
-Please refer to the [CONTRIBUTING page](./CONTRIBUTING.md) for more information
-about how you can contribute to this project. We welcome bug reports, feature
-requests, code review feedback, and also pull requests. 
-
-
-## Supported Java Versions
-
-We currently support Java 8 and higher. The Firebase Admin Java SDK also runs on [Google App
-Engine](https://cloud.google.com/appengine/).
-
-The Firebase Admin Java SDK follows the [Oracle Java SE
-support roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) 
-(see the Oracle Java SE Product Releases section).
-
-### For new development
-
-In general, new feature development occurs with support for the lowest Java LTS version
-covered by Oracle's Premier Support (which typically lasts 5 years from initial General
-Availability). If the minimum required JVM for a given library is changed, it is
-accompanied by a [semver](https://semver.org/) major release.
-
-Java 11 and Java 17 are the best choices for new development.
-
-## Documentation
-
-* [Setup Guide](https://firebase.google.com/docs/admin/setup/)
-* [Database Guide](https://firebase.google.com/docs/database/admin/start/)
-* [API Reference](https://firebase.google.com/docs/reference/admin/java/reference/packages)
-
-
-## License and Terms
-
-Firebase Admin Java SDK is licensed under the
-[Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
-
-Your use of Firebase is governed by the
-[Terms of Service for Firebase Services](https://firebase.google.com/terms/).
-
+    1. Clone the repository.
+    2. Copy Mailgun.h/.m and MGMessage.h/.m to your project.
+    3. **NOTE** You will need to install the [AFNetworking](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking) library to use the Mailgun SDK!
