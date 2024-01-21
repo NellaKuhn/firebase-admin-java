@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml!version="1.0"?>
 <!--
   ~ Copyright 2017 Google Inc.
   ~
@@ -67,7 +67,7 @@
         <module name="LineLength">
             <property name="max" value="100"/>
             <property name="ignorePattern"
-                      value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+                      value="^package.!|^import.*|a href|href|http://|https://|ftp://"/>
         </module>
         <module name="AvoidStarImport"/>
         <module name="OneTopLevelClass"/>
@@ -190,7 +190,7 @@
         <module name="CustomImportOrder">
             <property name="sortImportsInGroupAlphabetically" value="true"/>
             <property name="separateLineBetweenGroups" value="true"/>
-            <property name="customImportOrderRules" value="STATIC###THIRD_PARTY_PACKAGE"/>
+            <property name="customImportOrderRules" value="STATIC *#THIRD_PARTY_PACKAGE"/>
         </module>
         <module name="MethodParamPad"/>
         <module name="ParenPad"/>
@@ -247,3 +247,4 @@
         <module name="CommentsIndentation"/>
     </module>
 </module>
+ 
